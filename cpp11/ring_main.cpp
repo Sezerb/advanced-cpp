@@ -24,4 +24,10 @@ int main(){
 		cout << value << endl;
 	}
 
+	//Initializer List:
+	ring<string> textring2({"eleven", "twelve", "thirteen", "fourteen"});
+	for(auto value: textring2){
+		cout << value << endl;
+	}	
+
 }

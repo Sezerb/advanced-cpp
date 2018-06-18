@@ -2,6 +2,7 @@
 #define RING_H
 
 #include <iostream>
+#include <initializer_list>
 
 using namespace std;
 
@@ -17,6 +18,20 @@ public:
 	ring(int size) : m_size(size), m_pos(0) {
 		m_values = new T[size];
 	};
+
+	//initializer list impl.
+	ring(initializer_list<T> objs){
+		int size{0};
+		m_size = objs.size();
+		m_pos = 0;
+		m_values = new T[m_size];
+
+		for(auto value : objs){
+			m_values[size++] = value;
+		};
+
+	}
+
 	~ring(){
 		delete[] m_values;
 		m_values = NULL;
@@ -37,7 +52,7 @@ public:
 		return m_size;
 	}
 
-	iterator begin(){
+	iterator begin(){	
 		return iterator(0, *this);
 	}
 
