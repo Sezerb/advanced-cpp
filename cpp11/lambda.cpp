@@ -53,6 +53,9 @@ int main(){
 
     //Lambda expression has its own scope so capture one!
     [one](){ cout << one << endl;}();
+    //In order to modify "one" only in lambda scope use "mutable"
+    [one]() mutable { one = 11;}();
+    [one](){ cout << one << endl;}();
 
     //Capture every local variable by copy.
     [=](){cout << one << " " << two << " "<< three << endl;}();
