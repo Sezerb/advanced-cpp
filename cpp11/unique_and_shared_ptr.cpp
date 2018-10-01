@@ -34,7 +34,7 @@ int main(){
 		cout << "We are in a dummy scope" << endl;
 		shared_ptr<Thing> psThing2(nullptr);
 		psThing2 = psThing1;
-		//psThing2 no deallocated because it's shared!
+		//psThing2 not deallocated because it's shared!
 	}
 
 	cout << "End of days" << endl;
