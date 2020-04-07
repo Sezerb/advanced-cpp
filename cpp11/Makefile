@@ -12,3 +12,7 @@ all: $(EXECUTABLE)
 
 $(EXECUTABLE): % : %.o
 	$(CC) $(LDFLAGS) $^ -o $@
+
+.PHONY:	clean
+clean:
+	rm -f $(EXECUTABLE) *.o
