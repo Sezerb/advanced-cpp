@@ -5,7 +5,7 @@ class Thing{
 };
 
 template<class T>
-runCheck(T&& arg){
+void runCheck(T&& arg){
 	check(std::forward<T>(arg));
 }
 
